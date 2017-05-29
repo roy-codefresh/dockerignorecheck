@@ -6,6 +6,7 @@ steps:
     image_name: roycodefresh/dockerignorecheck
     working_directory: ./
     dockerfile: Dockerfile
+    nocache: true
 #  push1:
 #   type: push
 #   title: Standard push to registry1
