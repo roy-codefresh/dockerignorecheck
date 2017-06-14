@@ -1,5 +1,9 @@
 version: '1.0'
 steps:
+  freestyle:
+    image: containers101/whomi
+    commands:
+      - echo hello world
   build:
     title: Building Docker Image
     type: build
