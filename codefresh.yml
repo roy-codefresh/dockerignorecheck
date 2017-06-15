@@ -1,7 +1,7 @@
 version: '1.0'
 steps:
   freestyle:
-    image: roycodefresh/whomi:master
+    image: codefresh/node-tester-image:8.0.0
     commands:
       - echo hello world
   build:
