@@ -1,7 +1,7 @@
 version: '1.0'
 steps:
   freestyle:
-    image: containers101/whomi:master
+    image: roycodefresh/whomi:master
     commands:
       - echo hello world
   build:
