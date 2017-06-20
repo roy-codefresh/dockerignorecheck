@@ -1,9 +1,5 @@
 version: '1.0'
 steps:
-  freestyle:
-    image: gcr.io/cf-ci-1027/dockerignorecheck:master
-    commands:
-      - echo hello world
   build:
     title: Building Docker Image
     type: build
