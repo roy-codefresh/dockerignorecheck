@@ -4,6 +4,7 @@ steps:
     title: Building Docker Image
     type: build
     image_name: roycodefresh/dockerignorecheck
+    tag: latest
     working_directory: ./
     dockerfile: Dockerfile
     no_cache: true
