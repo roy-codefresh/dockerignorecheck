@@ -26,8 +26,7 @@ steps:
     composition_candidates:
       test:
         image: ${{build}}
-        command:
-          - ping redis -t 4
+        command: ping redis -t 4
   push:
     title: 'push'
     type: push
