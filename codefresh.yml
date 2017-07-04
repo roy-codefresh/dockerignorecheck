@@ -23,11 +23,11 @@ steps:
       services:
         redis:
           image: redis
-      composition_candidates:
-        test:
-          image: ${{build}}
-          command:
-            - ping redis -t 4
+    composition_candidates:
+      test:
+        image: ${{build}}
+        command:
+          - ping redis -t 4
   push:
     title: 'push'
     type: push
