@@ -1,5 +1,12 @@
 version: '1.0'
 steps:
+  test_before:
+    title: Some tests before build
+    image: alpine
+    commands:
+      - echo Hello World
+      - apk add git
+      - git status
   build:
     title: Building Docker Image
     type: build
@@ -8,3 +15,21 @@ steps:
     working_directory: ./
     dockerfile: Dockerfile
     no_cache: true
+  comp:
+    title: 'compositions'
+    type: composition
+    composition:
+      version: '2'
+      services:
+        redis:
+          image: redis
+      composition_candidates:
+        test:
+          image: ${{build}}
+          command:
+            - ping redis -t 4
+  push:
+    title: 'push'
+    type: push
+    candidate: ${{build}}
+    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
