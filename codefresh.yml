@@ -5,7 +5,7 @@ steps:
     image: alpine
     commands:
       - echo Hello World
-      - apk add git
+      - apk add --update git
       - git status
   build:
     title: Building Docker Image
