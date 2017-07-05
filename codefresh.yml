@@ -27,6 +27,16 @@ steps:
       test:
         image: ${{build}}
         command: ping redis -c 4
+    on_success:
+      metadata:
+        set:
+          - '${{build.imageId}}':
+              - CF_QUALITY: true
+    on_fail:
+      metadata:
+        set:
+          - '${{build.imageId}}':
+              - CF_QUALITY: false
   push:
     title: 'push'
     type: push
