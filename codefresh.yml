@@ -5,8 +5,8 @@ steps:
     image: alpine
     commands:
       - echo Hello World
-      - apk add --update git
-      - git status
+      - apk add --no-cache python2
+      - python -c 'print "hello..."'
   build:
     title: Building Docker Image
     type: build
