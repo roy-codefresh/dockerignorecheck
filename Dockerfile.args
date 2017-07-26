@@ -1,0 +1,9 @@
+FROM alpine
+
+ARG name
+
+WORKDIR /check
+
+RUN echo Hello ${name}
+
+CMD [ "/bin/find", ".", "-type", "f"]
