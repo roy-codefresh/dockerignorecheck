@@ -13,7 +13,7 @@ steps:
       - name=world
     dockerfile: Dockerfile.args
     no_cache: true
-  private_base-image:
+  private_base_image:
     title: Building Docker Image With Private Image Base 
     type: build
     image_name: roycodefresh/dockerignorecheck3
