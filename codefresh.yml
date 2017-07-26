@@ -29,7 +29,7 @@ steps:
   dwd_build:
     title: Building Docker Image With Different Working Directory
     type: build
-    image_name: roycodefresh/dockerignorecheck
+    image_name: dockerignorecheck3
     working_directory: ./order
     dockerfile: Dockerfile.dwd
     no_cache: true
