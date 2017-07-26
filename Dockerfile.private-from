@@ -1,0 +1,5 @@
+FROM roy999-docker-go-fish.bintray.io/alpine
+
+WORKDIR /check
+
+CMD [ "/bin/find", ".", "-type", "f"]
