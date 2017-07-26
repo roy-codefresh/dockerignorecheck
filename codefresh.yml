@@ -1,10 +1,38 @@
 version: '1.0'
 steps:
-  build:
+  simple-build:
     title: Building Docker Image
     type: build
     image_name: roycodefresh/dockerignorecheck
-    tag: latest
-    working_directory: ./
+    no_cache: true
+  args-build:
+    title: Building Docker Image With Arg
+    type: build
+    image_name: roycodefresh/dockerignorecheck2
+    build_arguments:
+      - name=world
+    dockerfile: Dockerfile.args
+    no_cache: true
+  private-base-image:
+    title: Building Docker Image With Private Image Base 
+    type: build
+    image_name: roycodefresh/dockerignorecheck3
+    build_arguments:
+      - name=world
+    dockerfile: Dockerfile.private-from
+    no_cache: true
+  squash-build:
+    title: Building Docker Image With Squash
+    type: build
+    image_name: roycodefresh/dockerignorecheck4
     dockerfile: Dockerfile
     no_cache: true
+    squash: true
+  dwd-build:
+    title: Building Docker Image With Different Working Directory
+    type: build
+    image_name: roycodefresh/dockerignorecheck
+    working_directory: ./order
+    dockerfile: Dockerfile.dwd
+    no_cache: true
+    
