@@ -1,4 +1,4 @@
-FROM roy999-docker-go-fish.bintray.io/alpine
+FROM gcr.io/cf-ci-1027/alpine
 
 WORKDIR /check
 
