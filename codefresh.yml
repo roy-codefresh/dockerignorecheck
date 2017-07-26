@@ -34,10 +34,7 @@ steps:
     dockerfile: Dockerfile.dwd
     no_cache: true
   cache_build:
-    title: Building Docker Image With Different Working Directory
+    title: Building Docker Image With Cache
     type: build
-    image_name: roycodefresh/dockerignorecheck
-    working_directory: ./order
-    dockerfile: Dockerfile.dwd
-    no_cache: true
+    image_name: roycodefresh/dockerignorecheck_cache
     
