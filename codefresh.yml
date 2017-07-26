@@ -17,8 +17,6 @@ steps:
     title: Building Docker Image With Private Image Base 
     type: build
     image_name: roycodefresh/dockerignorecheck3
-    build_arguments:
-      - name=world
     dockerfile: Dockerfile.private-from
     no_cache: true
   #squash_build:
