@@ -10,13 +10,13 @@ steps:
   push_to_default:
     title: Pushing Image To Docker-Hub
     type: push
-    candidate: ${build}
+    candidate: ${{build}}
     image_name: roycodefresh/push
     tag: docker
   push_to_registry:
     title: Pushing Image To Pre-Configured Registry
     type: push
-    candidate: ${build}
+    candidate: ${{build}}
     registry: bintray
     image_name: roycodefresh/push
     tag: bintray
