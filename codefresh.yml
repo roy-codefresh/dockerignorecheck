@@ -3,8 +3,27 @@ steps:
   build:
     title: Building Docker Image
     type: build
-    image_name: roycodefresh/dockerignorecheck
+    image_name: roycodefresh/push
     tag: latest
     working_directory: ./
     dockerfile: Dockerfile
-    no_cache: true
+  push_to_default:
+    title: Pushing Image To Docker-Hub
+    type: push
+    candidate: ${build}
+    image_name: roycodefresh/push
+    tag: docker
+  push_to_registry:
+    title: Pushing Image To Pre-Configured Registry
+    type: push
+    candidate: ${build}
+    registry: bintray
+    image_name: roycodefresh/push
+    tag: bintray
+  push_non_cf_image:
+    title: Pushing Image That Wasn't Builded On Codefresh
+    type: push
+    candidate: 'alpine'
+    image_name: roycodefresh/alpine
+    tag: from-cf
+  
