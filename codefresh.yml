@@ -11,6 +11,7 @@ steps:
     image_name: roycodefresh/dockerignorecheck2
     build_arguments:
       - name=world
+      - space=hello wolrd
     dockerfile: Dockerfile.args
     no_cache: true
   private_base_image:
