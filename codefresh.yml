@@ -1,5 +1,10 @@
 version: '1.0'
 steps:
+  freestyle_before:
+    title: Some tests before build
+    image: alpine
+    commands:
+      - echo Hello World
   build:
     title: Building Docker Image
     type: build
@@ -7,4 +12,35 @@ steps:
     tag: latest
     working_directory: ./
     dockerfile: Dockerfile
-    no_cache: true
+  freestyle_after:
+    title: Some tests after build
+    image: ${{build}}
+    commands:
+      - echo Hello World
+  comp:
+    title: 'compositions'
+    type: composition
+    composition:
+      version: '2'
+      services:
+        redis:
+          image: redis
+    composition_candidates:
+      test:
+        image: ${{build}}
+        command: ping redis -c 4
+    on_success:
+      metadata:
+        set:
+          - '${{build.imageId}}':
+              - CF_QUALITY: true
+    on_fail:
+      metadata:
+        set:
+          - '${{build.imageId}}':
+              - CF_QUALITY: false
+  push:
+    title: 'push'
+    type: push
+    candidate: ${{build}}
+    tag: ${{CF_BRANCH_TAG_NORMALIZED}}
