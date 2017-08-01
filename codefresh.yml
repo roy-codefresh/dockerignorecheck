@@ -20,6 +20,13 @@ steps:
     registry: bintray
     image_name: roycodefresh/push
     tag: bintray
+  push_multiple_tags:
+    title: Pushing Image Multiple times
+    type: push
+    candidate: ${{build}}
+    tags:
+    - tag1
+    - tag2
   push_non_cf_image:
     title: Pushing Image That Wasn't Builded On Codefresh
     type: push
