@@ -1,6 +1,6 @@
 version: '1.0'
 steps:
-  test_before:
+  freestyle_before:
     title: Some tests before build
     image: alpine
     commands:
@@ -15,6 +15,11 @@ steps:
     working_directory: ./
     dockerfile: Dockerfile
     no_cache: true
+  freestyle_after:
+    title: Some tests after build
+    image: ${{build}}
+    commands:
+      - echo Hello World
   comp:
     title: 'compositions'
     type: composition
