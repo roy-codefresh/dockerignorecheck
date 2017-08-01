@@ -14,7 +14,6 @@ steps:
     tag: latest
     working_directory: ./
     dockerfile: Dockerfile
-    no_cache: true
   freestyle_after:
     title: Some tests after build
     image: ${{build}}
