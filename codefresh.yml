@@ -8,3 +8,10 @@ steps:
     working_directory: ./
     dockerfile: Dockerfile
     no_cache: true
+  launch:
+    title: Step Title
+    type: launch-composition
+    composition: 'Comomo'
+    environment_name: 'environment name'
+    composition_variables:
+      - 'VAR2=wwww'
