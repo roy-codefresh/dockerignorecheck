@@ -1,13 +1,14 @@
 version: '1.0'
 steps:
-  inline_composition:
-    title: Launch inline composition
-    type: launch-composition
-    environment_name: 'environment name'
-    serial_pull: true
-    composition: 
-      version: '3'
-      services:
-        service:
-          image: alpine
-          env_file: ./env-file
+  build:
+    title: Building Docker Image
+    type: build
+    image_name: roycodefresh/test
+    working_directory: ./
+    dockerfile: Dockerfile
+  echo:
+    image: alpine
+    commands:
+      - echo $ID
+    environment:
+      - ID=${{build.imageId}}
