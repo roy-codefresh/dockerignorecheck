@@ -10,5 +10,6 @@ steps:
     image: alpine
     commands:
       - echo $ID
+      - ${{build.imageId}} 
     environment:
-      ID: ${{build.imageId}}
+      - ID=${{build.imageId}}
