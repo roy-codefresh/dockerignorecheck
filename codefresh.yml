@@ -11,4 +11,4 @@ steps:
     commands:
       - echo $ID
     environment:
-      - ID=${{build.imageId}}
+      ID: ${{build.imageId}}
