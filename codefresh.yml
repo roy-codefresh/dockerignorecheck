@@ -47,3 +47,10 @@ steps:
     type: push
     candidate: ${{build}}
     tag: ${{CF_BRANCH_TAG_NORMALIZED}}
+  launch:
+    title: launch composition
+    type: launch-composition
+    composition: 'Comomo'
+    environment_name: 'environment name'
+    composition_variables:
+      - 'VAR2=wwww'
