@@ -1,5 +1,3 @@
-FROM alpine
+FROM alpine:3.5
 
-WORKDIR /check
-
-CMD [ "/bin/find", ".", "-type", "f"]
+RUN apk add --no-cache curl
