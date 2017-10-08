@@ -31,4 +31,15 @@ steps:
           - sh
           - -c
           - 'curl hello-world:3000'
+  system_with_service_replacemenbt:
+    title: 'Compoistion from the codefresh system with service replacement'
+    type: composition
+    composition: CompositionTest
+    composition_candidates:
+      proxy:
+        image: ${{build}}
+        command:
+          - sh
+          - -c
+          - 'curl hello-world:3000'
         
