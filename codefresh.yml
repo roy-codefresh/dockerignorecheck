@@ -7,7 +7,6 @@ steps:
     tag: latest
     working_directory: ./
     dockerfile: Dockerfile
-    no_cache: true
   embedded:
     title: 'Embedded compoistion in the codefresh.yml file'
     type: composition
