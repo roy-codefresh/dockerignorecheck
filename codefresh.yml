@@ -29,7 +29,7 @@ steps:
         command:
           - sh
           - -c
-          - 'curl hello-world:3000'
+          - 'sleep 5; curl hello-world:3000'
   system_with_service_replacemenbt:
     title: 'Compoistion from the codefresh system with service replacement'
     type: composition
@@ -40,5 +40,5 @@ steps:
         command:
           - sh
           - -c
-          - 'curl hello-world:3000'
+          - 'sleep 5; curl hello-world:3000'
         
