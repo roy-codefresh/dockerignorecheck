@@ -20,3 +20,15 @@ steps:
       test:
         image: ${{build}}
         command: ping redis -c 4
+  embedded:
+    title: 'Compoistion from the codefresh system'
+    type: composition
+    composition: CompositionTest
+    composition_candidates:
+      test:
+        image: ${{build}}
+        command:
+          - sh
+          - -c
+          - [ "$(curl hello-world:3000)" == "Hello World!!!" ]
+        
