@@ -30,5 +30,5 @@ steps:
         command:
           - sh
           - -c
-          - [ "$(curl hello-world:3000)" == "Hello World!!!" ]
+          - '[ "$(curl hello-world:3000)" == "Hello World!!!" ]'
         
