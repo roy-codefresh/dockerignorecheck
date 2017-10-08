@@ -20,7 +20,7 @@ steps:
       test:
         image: ${{build}}
         command: ping redis -c 4
-  embedded:
+  system:
     title: 'Compoistion from the codefresh system'
     type: composition
     composition: CompositionTest
