@@ -1,25 +1,8 @@
 version: '1.0'
 steps:
-  free:
-    image: alpine
-    commands:
-      - echo TOKEN = $TOKEN
-      - env
-  fixed:
+  p2:
     type: composition
-    title: fixed composition
-    composition:
-      version: '2'
-      services:
-    composition_candidates:
-      test_service:
-        image: alpine
-        command: echo ${{TOKEN}} = $KEY
-        environment:
-          KEY: ${{TOKEN}}
-  not-fixed:
-    type: composition
-    title: not fixedcomposition
+    title: environment variables first form
     composition:
       version: '2'
       services:
@@ -27,5 +10,17 @@ steps:
       test_service:
         image: alpine
         command: echo TOKEN = $KEY
-    environments:
-      - KEY=${{TOKEN}}
+        environment:
+          KEY: ${{TOKEN}}
+  p2:
+    type: composition
+    title: environment variables second form
+    composition:
+      version: '2'
+      services:
+    composition_candidates:
+      test_service:
+        image: alpine
+        command: echo TOKEN = $KEY
+        environment:
+          - KEY=${{TOKEN}}
