@@ -1,10 +1,10 @@
-version: ‘1.0’
+version: '1.0'
 steps:
   mycomp:
     type: composition
     title: my composition
     composition:
-      version: ‘2’
+      version: '2'
       services:
         db:
           image: mongo
