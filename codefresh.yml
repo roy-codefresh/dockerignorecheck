@@ -16,8 +16,8 @@ steps:
       test_service:
         image: alpine
         command: echo TOKEN = $KEY
-      environments:
-        - KEY=${{TOKEN}}
+        environments:
+          - KEY=${{TOKEN}}
   not-fixed:
     type: composition
     title: not fixedcomposition
