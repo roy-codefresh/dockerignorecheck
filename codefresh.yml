@@ -1,5 +1,9 @@
 version: '1.0'
 steps:
+  free:
+    image: alpine:
+    commands:
+      - echo TOKEN = $TOKEN
   mycomp:
     type: composition
     title: my composition
@@ -14,3 +18,17 @@ steps:
         command: echo TOKEN = $KEY
       environments:
         - KEY=${{TOKEN}}
+  mycomp:
+    type: composition
+    title: my composition
+    composition:
+      version: '2'
+      services:
+        db:
+          image: mongo
+    composition_candidates:
+      test_service:
+        image: alpine
+        command: echo TOKEN = $KEY
+    environments:
+      - KEY=${{TOKEN}}
