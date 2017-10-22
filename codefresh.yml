@@ -4,9 +4,9 @@ steps:
     image: alpine
     commands:
       - echo TOKEN = $TOKEN
-  mycomp:
+  fixed:
     type: composition
-    title: my composition
+    title: fixed composition
     composition:
       version: '2'
       services:
@@ -18,9 +18,9 @@ steps:
         command: echo TOKEN = $KEY
       environments:
         - KEY=${{TOKEN}}
-  mycomp:
+  not-fixed:
     type: composition
-    title: my composition
+    title: not fixedcomposition
     composition:
       version: '2'
       services:
