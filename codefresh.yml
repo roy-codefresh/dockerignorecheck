@@ -11,8 +11,6 @@ steps:
     composition:
       version: '2'
       services:
-        db:
-          image: mongo
     composition_candidates:
       test_service:
         image: alpine
@@ -25,8 +23,6 @@ steps:
     composition:
       version: '2'
       services:
-        db:
-          image: mongo
     composition_candidates:
       test_service:
         image: alpine
