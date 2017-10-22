@@ -16,7 +16,7 @@ steps:
         image: alpine
         command: echo ${{TOKEN}} = $KEY
         environment:
-          KEY:${{TOKEN}}
+          KEY: ${{TOKEN}}
   not-fixed:
     type: composition
     title: not fixedcomposition
