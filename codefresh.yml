@@ -1,14 +1,16 @@
-version: '1.0'
+version: ‘1.0’
 steps:
-  build:
-    title: Building Docker Image
-    type: build
-    image_name: roycodefresh/test
-    working_directory: ./
-    dockerfile: Dockerfile
-  echo:
-    image: alpine
-    commands:
-      - echo $ID
-    environment:
-      - ID=${{ENV1}}
+  mycomp:
+    type: composition
+    title: my composition
+    composition:
+      version: ‘2’
+      services:
+        db:
+          image: mongo
+    composition_candidates:
+      test_service:
+        image: alpine
+        command: echo TOKEN = $KEY
+    environments:
+      - KEY = ${{TOKEN}}
