@@ -16,7 +16,7 @@ steps:
     composition_candidates:
       test_service:
         image: alpine
-        command: echo TOKEN = $KEY
+        command: echo ${{TOKEN}} = $KEY
         environment:
           - KEY=${{TOKEN}}
   not-fixed:
