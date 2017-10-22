@@ -4,6 +4,7 @@ steps:
     image: alpine
     commands:
       - echo TOKEN = $TOKEN
+      - env
   fixed:
     type: composition
     title: fixed composition
